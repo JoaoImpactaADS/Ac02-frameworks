@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'mudar123'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'senha123'
 app.config['MYSQL_DATABASE_DB'] = 'teste'
 app.config['MYSQL_DATABASE_HOST'] = '172.17.0.2'
 #app.config['MYSQL_DATABASE_HOST'] = '172.17.0.7'
@@ -29,19 +29,19 @@ def signUp():
     try:
         _name = request.form['inputName']
         _email = request.form['inputEmail']
-        _password = request.form['inputPassword']
+        _address = request.form['inputaddress']
 
         print(_name)
         print(_email)
-        print(_password)
+        print(_address)
 
         # validate the received values
-        if _name and _email and _password:
+        if _name and _email and _address:
             
             conn = mysql.connect()
             cursor = conn.cursor()
-            _hashed_password = _password
-            cursor.execute('insert into tbl_user (user_name, user_username, user_password) VALUES (%s, %s, %s)', ( _name,_email,_hashed_password))
+            _hashed_address = _address
+            cursor.execute('insert into tbl_user (user_name, user_username, user_password) VALUES (%s, %s, %s)', ( _name,_email,_hashed_address))
             conn.commit()
 
             return render_template('signup.html')
