@@ -13,6 +13,6 @@ web:
 db:
   image: mysql:5.7
   environment:
-      MYSQL_ROOT_PASSWORD: mudar123
+      MYSQL_ROOT_PASSWORD: senha123
   ports:
     - "3309:3309"
