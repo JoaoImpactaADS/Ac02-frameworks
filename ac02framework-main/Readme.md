@@ -38,7 +38,7 @@ DOCKER COMPOSE
   `user_id` BIGINT NOT NULL AUTO_INCREMENT,
   `user_name` VARCHAR(45) NULL,
   `user_username` VARCHAR(45) NULL,
-  `user_password` VARCHAR(45) NULL,
+  `user_address` VARCHAR(45) NULL,
   PRIMARY KEY (`user_id`));
   
 
@@ -53,13 +53,13 @@ BEGIN
         (
             user_name,
             user_username,
-            user_password
+            user_address
         )
         values
         (
             p_name,
             p_username,
-            p_password
+            p_address
         );     
     END IF;
 END //
